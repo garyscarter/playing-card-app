@@ -17,10 +17,10 @@ export class AppComponent {
   /*
   * Card suits to use
   */
-  suits: Array<ISuit> = [ new Suit('Clubs'),
-                          new Suit('Spades'),
-                          new Suit('Hearts'),
-                          new Suit('Diamonds') ];
+  suits: Array<ISuit> = [new Suit('Clubs'),
+  new Suit('Spades'),
+  new Suit('Hearts'),
+  new Suit('Diamonds')];
 
   /*
   * Number of cards per suit
@@ -70,9 +70,23 @@ export class AppComponent {
   }
 
   /*
-  * Draws a given number of cards from the deck
+  * Draws a given number of cards randomly from the deck
   */
-  drawCards(count: number): void {  }
+  drawCards(count: number): void {
+
+    if (count <= this.cards.length) {
+
+      for (let i = 0; i < count; i += 1) {
+
+        let j = Math.floor(Math.random() * this.cards.length);
+
+        this.drawnCards.push(this.cards.splice(j, 1)[0]);
+
+      }
+
+    }
+
+  }
 
   /*
   * Shuffles any given array

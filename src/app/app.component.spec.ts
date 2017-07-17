@@ -39,7 +39,6 @@ describe('AppComponent', () => {
 
   }));
 
-
   it('should output suits in order: Clubs, Spades, Hearts, Diamonds', async(() => {
 
     let expectedSuits = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];
@@ -64,6 +63,30 @@ describe('AppComponent', () => {
 
   }));
 
+  it('should output cards in order: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A', async(() => {
+
+    let expectedSuits = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];
+
+    const fixture = TestBed.createComponent(AppComponent);
+
+    const app = fixture.debugElement.componentInstance;
+
+    let expected = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+
+    let clubs = app.cards.filter(x => {
+
+      return x.suit.name === "Clubs";
+
+    }).map(x => {
+
+      return x.number;
+
+    });
+
+    expect(clubs).toEqual(expected);
+
+  }));
+
 
   /* 
   * Test Shuffle 
@@ -71,14 +94,14 @@ describe('AppComponent', () => {
 
   function getTestCardInput(): Array<Card> {
 
-    return [new Card(new Suit('Test'), 2),
-    new Card(new Suit('Test'), 3),
-    new Card(new Suit('Test1'), 2),
-    new Card(new Suit('Test1'), 4),
-    new Card(new Suit('Test2'), 6),
-    new Card(new Suit('Test2'), 7),
-    new Card(new Suit('Test3'), 9),
-    new Card(new Suit('Test3'), 11)]
+    return [ new Card(new Suit('Test'), 2),
+             new Card(new Suit('Test'), 3),
+             new Card(new Suit('Test1'), 2),
+             new Card(new Suit('Test1'), 4),
+             new Card(new Suit('Test2'), 6),
+             new Card(new Suit('Test2'), 7),
+             new Card(new Suit('Test3'), 9),
+             new Card(new Suit('Test3'), 11) ]
   }
 
   function getTestNumberArrayInput(): Array<number> {

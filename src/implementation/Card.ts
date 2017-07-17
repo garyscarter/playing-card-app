@@ -6,8 +6,8 @@ export class Card implements ICard {
 
     private static specialCards: any = {
         11: 'J',
-        12: 'K',
-        13: 'Q',
+        12: 'Q',
+        13: 'K',
         14: 'A'
     };
 
