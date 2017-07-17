@@ -32,7 +32,11 @@ export class AppComponent {
   */
   cards: Array<ICard> = new Array<ICard>();
 
-  
+  /*
+  * Cards drawn from the deck
+  */
+  drawnCards: Array<ICard> = new Array<ICard>();
+
   constructor() {
 
     this.generateCards();
@@ -64,6 +68,11 @@ export class AppComponent {
     }
 
   }
+
+  /*
+  * Draws a given number of cards from the deck
+  */
+  drawCards(count: number): void {  }
 
   /*
   * Shuffles any given array
