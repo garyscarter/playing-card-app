@@ -4,9 +4,17 @@ export class Suit implements ISuit {
 
     name: string;
 
-    constructor(name: string) {
+    icon: string;
+
+    color: string;
+
+    constructor(name: string, icon: string, color: string) {
 
         this.name = name;
+
+        this.icon = icon;
+
+        this.color = color;
         
     }
 

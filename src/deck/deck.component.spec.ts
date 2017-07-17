@@ -35,14 +35,14 @@ describe('DeckComponent', () => {
 
   function getTestCardInput(): Array<Card> {
 
-    return [ new Card(new Suit('Test'), 2),
-             new Card(new Suit('Test'), 3),
-             new Card(new Suit('Test1'), 2),
-             new Card(new Suit('Test1'), 4),
-             new Card(new Suit('Test2'), 6),
-             new Card(new Suit('Test2'), 7),
-             new Card(new Suit('Test3'), 9),
-             new Card(new Suit('Test3'), 11) ]
+    return [ new Card(new Suit('Test', 'i-clubs', 'red'), 2),
+             new Card(new Suit('Test', 'i-spades', 'black'), 3),
+             new Card(new Suit('Test1', 'i-hearts', 'red'), 2),
+             new Card(new Suit('Test1', 'i-diamonds', 'black'), 4),
+             new Card(new Suit('Test2', 'i-clubs', 'red'), 6),
+             new Card(new Suit('Test2', 'i-hearts', 'black'), 7),
+             new Card(new Suit('Test3', 'i-spades', 'red'), 9),
+             new Card(new Suit('Test3', 'i-clubs', 'red'), 11) ]
   }
 
   function getTestNumberArrayInput(): Array<number> {

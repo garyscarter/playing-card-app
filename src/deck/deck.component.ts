@@ -10,6 +10,14 @@ import { ICard } from '../interface/ICard';
 
 export class DeckComponent {
 
+    /*
+    * Title to display for the deck
+    */
+    @Input() title: string;
+
+    /*
+    * Cards to display in the deck
+    */
     @Input() cards: Array<ICard>;
 
     /*

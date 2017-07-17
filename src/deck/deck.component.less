@@ -1,0 +1,120 @@
+@card-border-radius: 5px;
+@card-border: 1px solid #808080;
+@card-padding: 5px;
+@card-color: #fff;
+
+.deck-container {    
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+    background-color: #fbfbfb;
+
+    h4 {
+        margin: 10px 0 15px 0;
+    }
+
+    .deck {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .card-container {
+            display: inline-block;
+            margin-bottom: 5px;
+
+            &:last-of-type {
+
+                .card {
+                    border-right: @card-border;
+                    width: 75px;
+                    text-align: left;
+                    border-radius: @card-border-radius;
+
+                    .text {
+                        margin: 0 @card-padding;
+                        width: calc(~'100% - (@{card-padding} * 2)');
+
+                        &.bottom {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .card {
+                border: @card-border;
+                border-right: none;
+                text-align: center;
+                border-top-left-radius: @card-border-radius;
+                border-bottom-left-radius: @card-border-radius;
+                height: 110px;
+                width: 20px;
+                position: relative;
+                padding: 5px 0;
+                box-shadow: 1px 1px 1px lightgray;
+                background-color: @card-color;
+
+                
+                &.red {
+                    color: #ff3333;
+                }
+
+                &.black {
+                    color: #000;
+                }
+
+                .number {
+                    font-weight: bold;
+                }
+
+                .text {
+                    position: absolute;
+                    width: 100%;
+
+                    &.top {
+                        top: @card-padding;
+                    }
+
+                    &.bottom {
+                        bottom: @card-padding;
+                        text-align: right;
+                        display: none;
+                    }
+                }
+
+                .icon {
+
+                    &.i-spades {
+                        &:before {
+                            content: '\2660';
+                        }
+                    }
+
+                    &.i-clubs {
+                        &:before {
+                            content: '\2663';
+                        }
+                    }
+
+                    &.i-hearts {
+                        &:before {
+                            content: '\2665';
+                        }
+                    }
+
+                    &.i-diamonds {
+                        &:before {
+                            content: '\2666';
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .controls {
+        text-align: center;
+    }
+}

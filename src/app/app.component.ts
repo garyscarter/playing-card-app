@@ -17,10 +17,10 @@ export class AppComponent {
   /*
   * Card suits to use
   */
-  suits: Array<ISuit> = [new Suit('Clubs'),
-  new Suit('Spades'),
-  new Suit('Hearts'),
-  new Suit('Diamonds')];
+  suits: Array<ISuit> = [ new Suit('Clubs', 'i-clubs', 'black'),
+                          new Suit('Spades', 'i-spades', 'black'),
+                          new Suit('Hearts', 'i-hearts', 'red'),
+                          new Suit('Diamonds', 'i-diamonds', 'red') ];
 
   /*
   * Number of cards per suit
@@ -37,12 +37,16 @@ export class AppComponent {
   */
   drawnCards: Array<ICard> = new Array<ICard>();
 
+  deckTitle = "Card Deck";
+
+  drawnDeckTitle = "Drawn Cards";
+
   constructor() {
 
     this.generateCards();
 
   }
-  
+
   /*
   * Generates a pack of cards using suits & cardsPerSuit
   */
