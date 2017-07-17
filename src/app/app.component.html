@@ -1,19 +1,9 @@
 <div class="app-container">
-    <ul class='deck'>
-        <li *ngFor="let card of cards" class="card-container">
-            <div class="card">
-                <div class="number">{{card.number}}-{{card.suit.name}}</div>
-            </div>
-        </li>
-    </ul>
-    <button (click)="shuffleCards(cards)">Shuffle Deck</button>
+
+    <card-deck [cards]="cards"></card-deck>
+
     <button (click)="drawCards(noDrawCards.value)">Draw Cards</button><input #noDrawCards type="number" value="0" min="0" max="{{cards.length}}" />
-    <ul class='deck'>
-        <li *ngFor="let card of drawnCards" class="card-container">
-            <div class="card">
-                <div class="number">{{card.number}}-{{card.suit.name}}</div>
-            </div>
-        </li>
-    </ul>
-    <button *ngIf="drawnCards.length > 0" (click)="shuffleCards(drawnCards)">Shuffle Drawn</button>
+
+    <card-deck [cards]="drawnCards"></card-deck>
+
 </div>

@@ -42,16 +42,7 @@ export class AppComponent {
     this.generateCards();
 
   }
-
-  /*
-  * Shuffles any given set of cards
-  */
-  shuffleCards(cards: Array<ICard>): void {
-
-    this.shuffle(cards);
-
-  }
-
+  
   /*
   * Generates a pack of cards using suits & cardsPerSuit
   */
@@ -83,21 +74,6 @@ export class AppComponent {
         this.drawnCards.push(this.cards.splice(j, 1)[0]);
 
       }
-
-    }
-
-  }
-
-  /*
-  * Shuffles any given array
-  */
-  private shuffle(arr: Array<any>): void {
-
-    for (let i = arr.length; i > 0; i--) {
-
-      let j = Math.floor(Math.random() * i);
-
-      [arr[i - 1], arr[j]] = [arr[j], arr[i - 1]];
 
     }
 

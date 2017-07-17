@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { DeckComponent } from '../deck/deck.component';
 
 import { Card } from '../implementation/Card';
 import { Suit } from '../implementation/Suit';
@@ -9,7 +10,8 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        DeckComponent
       ],
     }).compileComponents();
   }));
@@ -39,7 +41,7 @@ describe('AppComponent', () => {
 
   }));
 
-  it('should output suits in order: Clubs, Spades, Hearts, Diamonds', async(() => {
+  it('should initialise suits in order: Clubs, Spades, Hearts, Diamonds', async(() => {
 
     let expectedSuits = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];
 
@@ -63,7 +65,7 @@ describe('AppComponent', () => {
 
   }));
 
-  it('should output cards in order: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A', async(() => {
+  it('should initialise cards in order: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A', async(() => {
 
     let expectedSuits = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];
 
@@ -84,113 +86,6 @@ describe('AppComponent', () => {
     });
 
     expect(clubs).toEqual(expected);
-
-  }));
-
-
-  /* 
-  * Test Shuffle 
-  */
-
-  function getTestCardInput(): Array<Card> {
-
-    return [ new Card(new Suit('Test'), 2),
-             new Card(new Suit('Test'), 3),
-             new Card(new Suit('Test1'), 2),
-             new Card(new Suit('Test1'), 4),
-             new Card(new Suit('Test2'), 6),
-             new Card(new Suit('Test2'), 7),
-             new Card(new Suit('Test3'), 9),
-             new Card(new Suit('Test3'), 11) ]
-  }
-
-  function getTestNumberArrayInput(): Array<number> {
-
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-  }
-
-  function getTestStringArrayInput(): Array<string> {
-
-    return ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
-
-  }
-
-  it('should shuffle a given array of numbers', async(() => {
-
-    const fixture = TestBed.createComponent(AppComponent);
-
-    const app = fixture.debugElement.componentInstance;
-
-    let array = getTestNumberArrayInput();
-
-    let initialArray = getTestNumberArrayInput();
-
-    app.shuffle(array);
-
-    expect(array).not.toEqual(initialArray);
-
-  }));
-
-  it('should shuffle a given array of strings', async(() => {
-
-    const fixture = TestBed.createComponent(AppComponent);
-
-    const app = fixture.debugElement.componentInstance;
-
-    let array = getTestStringArrayInput();
-
-    let initialArray = getTestStringArrayInput();
-
-    app.shuffle(array);
-
-    expect(array).not.toEqual(initialArray);
-
-  }));
-
-  it('should shuffle a given set of cards differently once', async(() => {
-
-    const fixture = TestBed.createComponent(AppComponent);
-
-    const app = fixture.debugElement.componentInstance;
-
-    let cards = getTestCardInput();
-
-    let initialCards = getTestCardInput();
-
-    app.shuffleCards(cards);
-
-    expect(cards).not.toEqual(initialCards);
-
-  }));
-
-  it('should shuffle a given set of cards differently three times', async(() => {
-
-    const fixture = TestBed.createComponent(AppComponent);
-
-    const app = fixture.debugElement.componentInstance;
-
-    let cards = getTestCardInput();
-
-    let cardsBeforeShuffle = cards.map(x => Object.assign({}, x));
-
-    app.shuffleCards(cards);
-
-    let cardsAfterShuffleOne = cards.map(x => Object.assign({}, x));
-
-    app.shuffleCards(cards);
-
-    let cardsAfterShuffleTwo = cards.map(x => Object.assign({}, x));
-
-    app.shuffleCards(cards);
-
-    let cardsAfterShuffleThree = cards.map(x => Object.assign({}, x));
-
-    expect(cardsBeforeShuffle).not.toEqual(cardsAfterShuffleOne);
-
-    expect(cardsAfterShuffleOne).not.toEqual(cardsAfterShuffleTwo);
-
-    expect(cardsAfterShuffleTwo).not.toEqual(cardsAfterShuffleThree);
 
   }));
 
