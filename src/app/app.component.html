@@ -1,0 +1,10 @@
+<div class="app-container">
+    <ul class='deck'>
+        <li *ngFor="let card of cards" class="card-container">
+            <div class="card">
+                <div class="number">{{card.number}}-{{card.suit.name}}</div>
+            </div>
+        </li>
+    </ul>
+    <button (click)="shuffleCards(cards)">Shuffle Pack</button>
+</div>

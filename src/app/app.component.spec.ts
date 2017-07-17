@@ -37,6 +37,31 @@ describe('AppComponent', () => {
   }));
 
 
+  it('should output suits in order: Clubs, Spades, Hearts, Diamonds', async(() => {
+
+    let expectedSuits = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];
+
+    const fixture = TestBed.createComponent(AppComponent);
+
+    const app = fixture.debugElement.componentInstance;
+
+    let generatedSuits = [];
+
+    app.cards.forEach(x => {
+      
+      if (generatedSuits.indexOf(x.suit.name) === -1) {
+
+        generatedSuits.push(x.suit.name);
+
+      }
+
+    });
+
+    expect(expectedSuits).toEqual(generatedSuits);
+
+  }));
+
+
   /* 
   * Test Shuffle 
   */
