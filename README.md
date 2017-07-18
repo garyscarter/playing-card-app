@@ -29,7 +29,7 @@ Run `npm run e2e-test` to execute the Protractor end-to-end tests.
 *Before running the e2e tests make sure you are running the application.*
 
 ### Running lint analysis
-Run `npm run lint` to run lint anaylsis.
+Run `npm run lint` to run lint analysis.
 
 ## Application User Guide
 
