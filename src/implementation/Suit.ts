@@ -15,7 +15,7 @@ export class Suit implements ISuit {
         this.icon = icon;
 
         this.color = color;
-        
+
     }
 
 }

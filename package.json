@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "start": "ng serve --prod --open",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "ng": "ng",
+    "start-prod": "ng serve --prod --open",
+    "start-dev": "ng serve --open",
+    "unit-test": "ng test",    
+    "e2e-test": "ng e2e",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -15,6 +17,7 @@
     "@angular/core": "^4.0.0",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "less": "^2.7.2",
     "rxjs": "^5.1.0",

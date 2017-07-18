@@ -15,7 +15,7 @@ describe('DeckComponent', () => {
   }));
 
 
-  /* 
+  /*
   *  Test Initialisation
   */
 
@@ -29,8 +29,8 @@ describe('DeckComponent', () => {
 
   }));
 
-  /* 
-  * Test Shuffle 
+  /*
+  * Test Shuffle
   */
 
   function getTestCardInput(): Array<Card> {
@@ -42,7 +42,7 @@ describe('DeckComponent', () => {
              new Card(new Suit('Test2', 'i-clubs', 'red'), 6),
              new Card(new Suit('Test2', 'i-hearts', 'black'), 7),
              new Card(new Suit('Test3', 'i-spades', 'red'), 9),
-             new Card(new Suit('Test3', 'i-clubs', 'red'), 11) ]
+             new Card(new Suit('Test3', 'i-clubs', 'red'), 11) ];
   }
 
   function getTestNumberArrayInput(): Array<number> {
@@ -63,9 +63,9 @@ describe('DeckComponent', () => {
 
     const deck = fixture.debugElement.componentInstance;
 
-    let array = getTestNumberArrayInput();
+    const array = getTestNumberArrayInput();
 
-    let initialArray = getTestNumberArrayInput();
+    const initialArray = getTestNumberArrayInput();
 
     deck.shuffle(array);
 
@@ -79,9 +79,9 @@ describe('DeckComponent', () => {
 
     const deck = fixture.debugElement.componentInstance;
 
-    let array = getTestStringArrayInput();
+    const array = getTestStringArrayInput();
 
-    let initialArray = getTestStringArrayInput();
+    const initialArray = getTestStringArrayInput();
 
     deck.shuffle(array);
 
@@ -95,9 +95,9 @@ describe('DeckComponent', () => {
 
     const deck = fixture.debugElement.componentInstance;
 
-    let cards = getTestCardInput();
+    const cards = getTestCardInput();
 
-    let initialCards = getTestCardInput();
+    const initialCards = getTestCardInput();
 
     deck.shuffleCards(cards);
 
@@ -111,21 +111,21 @@ describe('DeckComponent', () => {
 
     const deck = fixture.debugElement.componentInstance;
 
-    let cards = getTestCardInput();
+    const cards = getTestCardInput();
 
-    let cardsBeforeShuffle = cards.map(x => Object.assign({}, x));
-
-    deck.shuffleCards(cards);
-
-    let cardsAfterShuffleOne = cards.map(x => Object.assign({}, x));
+    const cardsBeforeShuffle = cards.map(x => Object.assign({}, x));
 
     deck.shuffleCards(cards);
 
-    let cardsAfterShuffleTwo = cards.map(x => Object.assign({}, x));
+    const cardsAfterShuffleOne = cards.map(x => Object.assign({}, x));
 
     deck.shuffleCards(cards);
 
-    let cardsAfterShuffleThree = cards.map(x => Object.assign({}, x));
+    const cardsAfterShuffleTwo = cards.map(x => Object.assign({}, x));
+
+    deck.shuffleCards(cards);
+
+    const cardsAfterShuffleThree = cards.map(x => Object.assign({}, x));
 
     expect(cardsBeforeShuffle).not.toEqual(cardsAfterShuffleOne);
 

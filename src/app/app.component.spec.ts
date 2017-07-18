@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   }));
 
 
-  /* 
+  /*
   *  Test Initialisation
   */
 
@@ -43,13 +43,13 @@ describe('AppComponent', () => {
 
   it('should initialise suits in order: Clubs, Spades, Hearts, Diamonds', async(() => {
 
-    let expectedSuits = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];
+    const expectedSuits = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];
 
     const fixture = TestBed.createComponent(AppComponent);
 
     const app = fixture.debugElement.componentInstance;
 
-    let generatedSuits = [];
+    const generatedSuits = [];
 
     app.cards.forEach(x => {
 
@@ -67,17 +67,17 @@ describe('AppComponent', () => {
 
   it('should initialise cards in order: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A', async(() => {
 
-    let expectedSuits = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];
+    const expectedSuits = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];
 
     const fixture = TestBed.createComponent(AppComponent);
 
     const app = fixture.debugElement.componentInstance;
 
-    let expected = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+    const expected = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-    let clubs = app.cards.filter(x => {
+    const clubs = app.cards.filter(x => {
 
-      return x.suit.name === "Clubs";
+      return x.suit.name === 'Clubs';
 
     }).map(x => {
 
@@ -89,7 +89,7 @@ describe('AppComponent', () => {
 
   }));
 
-  /* 
+  /*
   * Test Normal Draw Usage
   */
 
@@ -172,7 +172,7 @@ describe('AppComponent', () => {
 
 
   /*
-  * Test Draw Boundries 
+  * Test Draw Boundries
   */
 
   it('should add 0 cards to the drawn cards when 0 cards are drawn', async(() => {

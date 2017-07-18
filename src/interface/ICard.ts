@@ -1,4 +1,4 @@
-import { ISuit } from './ISuit'
+import { ISuit } from './ISuit';
 
 export interface ICard {
 

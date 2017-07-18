@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { ICard } from '../interface/ICard';
 
 @Component({
-    selector: 'card-deck',
+    selector: 'app-card-deck',
     templateUrl: './deck.component.html',
     styleUrls: ['./deck.component.less']
 })
@@ -27,7 +27,7 @@ export class DeckComponent {
 
         for (let i = arr.length; i > 0; i--) {
 
-            let j = Math.floor(Math.random() * i);
+            const j = Math.floor(Math.random() * i);
 
             [arr[i - 1], arr[j]] = [arr[j], arr[i - 1]];
 

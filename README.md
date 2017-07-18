@@ -9,24 +9,27 @@ Node.js & npm are required to build & test this project, if you do not have them
 Run `npm install` to install all project dependencies before running, buidling or testing. 
 
 ### Run Production Code
-Run `npm start` for a server running a production build. This will open the application in your browser automatically.
+Run `npm run start-prod` for a server running a production build. This will open the application in your browser automatically.
  
 ### Run Development Code
-Run `ng serve --open` for a dev server. 
+Run `npm run start-dev` for a dev server. 
 This will open the application in your browser automatically. 
-Any changes made to code will be be autonmatically updated.
+Any changes made to code will be be automatically updated.
  
 ### Build
  
-Run `ng build` to build the project. This will build the project to the `dist/` directory. 
+Run `npm run build` to build the project. This will build the project to the `dist/` directory. 
 Use the `--prod` flag for a production build.
  
 ### Running tests
  
-Run `npm test` to execute the karma unit tests.
+Run `npm run unit-test` to execute the karma unit tests.
  
-Run `npm e2e` to execute the Protractor end-to-end tests
+Run `npm run e2e-test` to execute the Protractor end-to-end tests
 *Before running the e2e tests make sure you are running the application.*
+
+### Running lint analysis
+Run `npm run lint` to run lint anaylsis.
 
 ## Application User Guide
 

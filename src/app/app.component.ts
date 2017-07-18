@@ -25,7 +25,7 @@ export class AppComponent {
   /*
   * Number of cards per suit
   */
-  cardsPerSuit: number = 13;
+  cardsPerSuit = 13;
 
   /*
   * Generated deck of cards
@@ -37,9 +37,9 @@ export class AppComponent {
   */
   drawnCards: Array<ICard> = new Array<ICard>();
 
-  deckTitle = "Card Deck";
+  deckTitle = 'Card Deck';
 
-  drawnDeckTitle = "Drawn Cards";
+  drawnDeckTitle = 'Drawn Cards';
 
   constructor() {
 
@@ -52,11 +52,11 @@ export class AppComponent {
   */
   private generateCards(): void {
 
-    for (let suit of this.suits) {
+    for (const suit of this.suits) {
 
       for (let i = 2; i <= this.cardsPerSuit + 1; i += 1) {
 
-        this.cards.push(new Card(suit, i))
+        this.cards.push(new Card(suit, i));
 
       }
 
@@ -73,7 +73,7 @@ export class AppComponent {
 
       for (let i = 0; i < count; i += 1) {
 
-        let j = Math.floor(Math.random() * this.cards.length);
+        const j = Math.floor(Math.random() * this.cards.length);
 
         this.drawnCards.push(this.cards.splice(j, 1)[0]);
 
