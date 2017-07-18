@@ -1,5 +1,4 @@
 # Playing Card Application
----
 
 ## Running, Building & Testing
 
