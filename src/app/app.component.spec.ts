@@ -223,4 +223,32 @@ describe('AppComponent', () => {
 
   }));
 
+
+  /*
+  * Test Reset
+  */
+  it('should set the deck back to 52 cards when reset', async(() => {
+
+    const fixture = TestBed.createComponent(AppComponent);
+
+    const app = fixture.debugElement.componentInstance;
+
+    app.reset();
+
+    expect(app.cards.length).toEqual(52);
+
+  }));
+
+  it('should remove all cards from the drawn cards when reset', async(() => {
+
+    const fixture = TestBed.createComponent(AppComponent);
+
+    const app = fixture.debugElement.componentInstance;
+
+    app.reset();
+
+    expect(app.drawnCards.length).toEqual(0);
+
+  }));
+
 });

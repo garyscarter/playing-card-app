@@ -25,7 +25,7 @@ Use the `--prod` flag for a production build.
  
 Run `npm run unit-test` to execute the karma unit tests.
  
-Run `npm run e2e-test` to execute the Protractor end-to-end tests
+Run `npm run e2e-test` to execute the Protractor end-to-end tests.
 *Before running the e2e tests make sure you are running the application.*
 
 ### Running lint analysis
