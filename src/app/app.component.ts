@@ -37,8 +37,14 @@ export class AppComponent {
   */
   drawnCards: Array<ICard> = new Array<ICard>();
 
+  /*
+  * Title displayed for the full deck
+  */
   deckTitle = 'Card Deck';
 
+  /*
+  * Title displayed for the drawn deck
+  */
   drawnDeckTitle = 'Drawn Cards';
 
   constructor() {
@@ -83,4 +89,16 @@ export class AppComponent {
 
   }
 
+  /*
+  * Reset the cards back to default
+  */
+  reset(): void {
+
+    this.cards = new Array<ICard>();
+
+    this.drawnCards = new Array<ICard>();
+
+    this.generateCards();
+
+  }
 }

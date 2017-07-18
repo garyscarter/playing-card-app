@@ -1,7 +1,9 @@
 <div class="app-container">
     <app-card-deck [cards]="cards" [title]="deckTitle"></app-card-deck>
     <div class="controls">
-        <button (click)="drawCards(noDrawCards.value)">Draw Cards</button><input #noDrawCards type="number" value="0" min="0" max="{{cards.length}}" />
+        <button (click)="drawCards(noDrawCards.value)">Draw Cards</button>
+        <input #noDrawCards type="number" value="0" min="0" max="{{cards.length}}" />
+        <button (click)="reset()">Reset Cards</button>
     </div>
     <app-card-deck [cards]="drawnCards" [title]="drawnDeckTitle"></app-card-deck>
 </div>
