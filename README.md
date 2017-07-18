@@ -27,7 +27,7 @@ Run `npm run unit-test` to execute the karma unit tests.
  
 Run `npm run e2e-test` to execute the Protractor end-to-end tests.
 
-### Run Lint analysis
+### Run Lint Analysis
 Run `npm run lint` to run lint analysis.
 
 ## Application User Guide
