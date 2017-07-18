@@ -1,8 +1,8 @@
 <div class="app-container">
-    <app-card-deck [cards]="cards" [title]="deckTitle"></app-card-deck>
+    <app-card-deck *ngIf="cards.length > 0" id="card-deck" [cards]="cards" [title]="deckTitle"></app-card-deck>
     <div class="controls">
-        <button (click)="drawCards(noDrawCards.value)">Draw Cards</button><input #noDrawCards type="number" value="0" min="0" max="{{cards.length}}" />
-        <button (click)="reset()">Reset Cards</button>
+        <button id="draw-cards" (click)="drawCards(noDrawCards.value)">Draw Cards</button><input id="draw-cards-no" #noDrawCards type="number" value="0" min="0" max="{{cards.length}}" />
+        <button id="reset-cards" (click)="reset()">Reset Cards</button>
     </div>
-    <app-card-deck [cards]="drawnCards" [title]="drawnDeckTitle"></app-card-deck>
+    <app-card-deck *ngIf="drawnCards.length > 0" id="drawn-deck" [cards]="drawnCards" [title]="drawnDeckTitle"></app-card-deck>
 </div>
