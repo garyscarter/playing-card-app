@@ -18,8 +18,8 @@ Any changes made to code will be be automatically updated.
  
 ### Build
  
-Run `npm run build` to build the project. This will build the project to the `dist/` directory. 
-Use the `--prod` flag for a production build.
+Run `npm run build` to build the project in production. 
+This will build the project to the `dist/` directory. 
  
 ### Running tests
  
