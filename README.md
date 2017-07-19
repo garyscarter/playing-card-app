@@ -26,6 +26,7 @@ This will build the project to the `dist/` directory.
 Run `npm run unit-test` to execute the karma unit tests.
  
 Run `npm run e2e-test` to execute the Protractor end-to-end tests.
+**Note: You must be running Chrome version >= 58.0.3029.0 to run the end-to-end tests**
 
 ### Run Lint Analysis
 Run `npm run lint` to run lint analysis.
